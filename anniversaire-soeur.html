@@ -242,7 +242,11 @@ footer span{color:var(--hot-pink)}
   <div class="container">
     <p class="section-label">🎁 Ton cadeau t'attend</p>
     <h2 class="section-title">La roue des<br>cadeaux.</h2>
-    <p style="color:rgba(255,255,255,.5);margin-bottom:1rem">Tourne la roue pour découvrir ton lot. C'est entièrement aléatoire*.</p>
+    <div style="display:inline-block;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:12px;padding:0.8rem 1.5rem;margin-bottom:1.5rem">
+  <span style="font-family:'Bebas Neue',sans-serif;font-size:1.4rem;color:var(--yellow);letter-spacing:0.05em">5 CHANCES SUR 6</span>
+  <span style="color:rgba(255,255,255,0.6);font-size:0.95rem;margin-left:0.5rem">de partir en voyage ✈️</span>
+</div>
+<p style="color:rgba(255,255,255,.4);margin-bottom:1rem;font-size:0.85rem">Tourne la roue pour découvrir ton lot. C'est entièrement aléatoire*.</p>
     <div class="wheel-wrap">
       <div class="wheel-pointer"></div>
       <canvas id="wheel-canvas" width="340" height="340"></canvas>
@@ -393,9 +397,9 @@ function spinWheel(){
   document.getElementById('get-gift-btn').style.display='none';
   // Mornifle = segment 5, center at 330deg. For pointer at top: wheel at 300deg.
   // Always spin exactly 8 full turns + land at 300deg
-  const MORNIFLE_REST = 300;
+  const MORNIFLE_REST = 30;
   const fullTurns = 8;
-  const target = fullTurns * 360 + MORNIFLE_REST;
+  const target = fullTurns * 360 + MORNIFLE_REST; // = 2910
   wAngle = 0; // reset each spin
   const dur = 9000; // 9 seconds - nice and slow
   const t0 = performance.now();
